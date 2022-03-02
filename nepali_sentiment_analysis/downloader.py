@@ -67,7 +67,7 @@ class Downloader:
         return os.path.join(homedir, "nepali_sentiment")
     
     def _download_package(self, package, dir):
-        filename = os.path.join(dir, f'{package.id}.zip')
+        filename = os.path.join(dir, f'{package.id}')
         infile = urlopen(package.url)
         with open(filename, 'wb') as outfile:
             num_blocks = max(1, int(package.unzipped_size) / (1024 * 16))
@@ -77,6 +77,10 @@ class Downloader:
                 if not s:
                     break
         infile.close()
+        
+        # print(f'Unziping the package: {package.id}')
+        # zf = zipfile.ZipFile(filename)
+        # zf.extractall(dir)
 
     def download(self, package_name):
         dir = self.default_download_dir()

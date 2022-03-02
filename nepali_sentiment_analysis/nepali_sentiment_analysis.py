@@ -10,6 +10,9 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from sklearn.svm import SVC
 
+import warnings
+warnings.filterwarnings("ignore")
+
 
 model = AutoModelForMaskedLM.from_pretrained(
     "Shushant/nepaliBERT", output_hidden_states=True, return_dict=True, output_attentions=True)
@@ -50,4 +53,4 @@ def predict(model_name, sentence):
 
     # note 0 is negative and 1 is positive
     print(model.predict(np.array(get_bert_embedding_sentence(
-        sentence).tolist()).reshape(1, -1)))
+        sentence).tolist()).reshape(1, -1))[0])
