@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="index.xsl" type="text/xsl"?>
-<everest_nlp_data>
+<nepali_sentiment>
   <packages>
     <package id="svc_sentiment" name="SVC Sentiment Model" author="" webpage="" license="MIT License" unzip="0" unzipped_size="13068865" subdir="" url="https://github.com/lappanchappan43/nepali_sentiment_data/blob/master/svc_sentiment?raw=true" />
   </packages>
-</everest_nlp_data>
+</nepali_sentiment>
